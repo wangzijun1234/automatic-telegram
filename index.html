@@ -1,0 +1,1003 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="一段关于梦想、挑战与坚持的开源故事">
+      
+      
+        <meta name="author" content="技术历史记录者">
+      
+      
+      
+      
+        <link rel="next" href="birth/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Vue.js 成长之路：从想法到主流</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Vue.js 成长之路：从想法到主流" class="md-header__button md-logo" aria-label="Vue.js 成长之路：从想法到主流" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vue.js 成长之路：从想法到主流
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              首页
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="teal"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="teal"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="birth/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  诞生记
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="growth/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  成长历程
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="technology/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  技术演进
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="ecosystem/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  生态发展
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="statistics/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  数据见证
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="team/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  团队故事
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="future/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  未来展望
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Vue.js 成长之路：从想法到主流" class="md-nav__button md-logo" aria-label="Vue.js 成长之路：从想法到主流" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Vue.js 成长之路：从想法到主流
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📖 故事简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vuejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Vue.js 核心特性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗓️ 发展时间线
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 生态影响力
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 惊人的成长曲线
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vuejs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 为什么 Vue.js 能成功？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vuejs_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 开始阅读 Vue.js 的完整故事
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="birth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    诞生记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="growth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    成长历程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    技术演进
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    生态发展
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据见证
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    团队故事
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="future/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    未来展望
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 40px; padding: 20px; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 15px;">
+  <img src="images/vue-logo.jpg" alt="Vue.js Logo" width="80" height="80" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <div style="text-align: left;">
+    <h1 style="margin: 0 0 8px 0; color: #35495e; font-size: 2.2em;">Vue.js：一个独立开发者的梦想征程</h1>
+    <p style="margin: 0; color: #666; font-size: 1.1em;">从个人项目到全球现象的技术之旅</p>
+  </div>
+</div>
+<blockquote>
+<p>"我只是想，能不能把 Angular 好的部分提取出来，做一个更轻量级的框架。" —— Evan You</p>
+</blockquote>
+<hr />
+<h2 id="_1">📖 故事简介</h2>
+<div class="quote-box">
+"2013年，在 Google 工作的 Evan You 参与 AngularJS 项目时萌生了一个想法：创建一个更轻量、更易学的框架。这个简单的想法，开启了一段令人惊叹的开源之旅。"
+</div>
+
+<h2 id="vuejs">🎯 Vue.js 核心特性</h2>
+<div style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 40px 20px; border-radius: 18px; margin: 40px 0; text-align: center;">
+  <div style="background: white; padding: 30px; border-radius: 14px; box-shadow: 0 6px 24px rgba(0,0,0,0.12); display: inline-block; max-width: 95%;">
+    <img src="images/jianjie.png" alt="Vue.js 核心特性与设计理念" style="max-width: 100%; border-radius: 10px; border: 1px solid #e9ecef; box-shadow: 0 4px 12px rgba(65, 184, 131, 0.15);">
+    <div style="margin-top: 25px;">
+      <h3 style="color: #35495e; margin: 0 0 12px 0; font-size: 1.4em; background: linear-gradient(135deg, #42b883, #35495e); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Vue.js 设计哲学与核心特性</h3>
+      <p style="color: #666; margin: 0; font-size: 15px; line-height: 1.5;">渐进式框架 • 响应式数据绑定 • 组件化开发 • 虚拟DOM • 丰富的生态系统</p>
+    </div>
+  </div>
+</div>
+
+<h2 id="_2">🗓️ 发展时间线</h2>
+<div style="position: relative; max-width: 800px; margin: 40px auto; padding-left: 30px;">
+
+  <!-- 中间的时间轴线 -->
+  <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, #42b883, #35495e); border-radius: 2px;"></div>
+
+  <!-- 2013年 -->
+  <div style="position: relative; margin-bottom: 40px;">
+    <div style="position: absolute; left: -38px; top: 0; width: 16px; height: 16px; background: #42b883; border: 4px solid white; border-radius: 50%; box-shadow: 0 0 0 2px #42b883;"></div>
+    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #42b883;">
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <span style="background: #42b883; color: white; padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: bold;">2013年</span>
+        <div style="margin-left: 10px; width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 12px solid #42b883;"></div>
+      </div>
+      <div style="font-size: 16px; color: #35495e; font-weight: bold;">想法萌生</div>
+      <div style="font-size: 14px; color: #666; margin-top: 5px;">在Google工作期间对现有框架的思考</div>
+    </div>
+  </div>
+
+  <!-- 2014年2月 -->
+  <div style="position: relative; margin-bottom: 40px;">
+    <div style="position: absolute; left: -38px; top: 0; width: 16px; height: 16px; background: #42b883; border: 4px solid white; border-radius: 50%; box-shadow: 0 0 0 2px #42b883;"></div>
+    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #42b883;">
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <span style="background: #35495e; color: white; padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: bold;">2014年2月</span>
+        <div style="margin-left: 10px; width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 12px solid #35495e;"></div>
+      </div>
+      <div style="font-size: 16px; color: #35495e; font-weight: bold;">第一个 Commit</div>
+      <div style="font-size: 14px; color: #666; margin-top: 5px;">Vue 诞生，开启开源之旅</div>
+    </div>
+  </div>
+
+  <!-- 2014年12月 -->
+  <div style="position: relative; margin-bottom: 40px;">
+    <div style="position: absolute; left: -38px; top: 0; width: 16px; height: 16px; background: #42b883; border: 4px solid white; border-radius: 50%; box-shadow: 0 0 0 2px #42b883;"></div>
+    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #42b883;">
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <span style="background: #42b883; color: white; padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: bold;">2014年12月</span>
+        <div style="margin-left: 10px; width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 12px solid #42b883;"></div>
+      </div>
+      <div style="font-size: 16px; color: #35495e; font-weight: bold;">v0.10.0 发布</div>
+      <div style="font-size: 14px; color: #666; margin-top: 5px;">开始获得开发者关注</div>
+    </div>
+  </div>
+
+  <!-- 2015年10月 -->
+  <div style="position: relative; margin-bottom: 40px;">
+    <div style="position: absolute; left: -38px; top: 0; width: 16px; height: 16px; background: #42b883; border: 4px solid white; border-radius: 50%; box-shadow: 0 0 0 2px #42b883;"></div>
+    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #42b883;">
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <span style="background: #35495e; color: white; padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: bold;">2015年10月</span>
+        <div style="margin-left: 10px; width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 12px solid #35495e;"></div>
+      </div>
+      <div style="font-size: 16px; color: #35495e; font-weight: bold;">v1.0 正式发布</div>
+      <div style="font-size: 14px; color: #666; margin-top: 5px;">Evangelion 版本</div>
+    </div>
+  </div>
+
+  <!-- 2016年10月 -->
+  <div style="position: relative; margin-bottom: 40px;">
+    <div style="position: absolute; left: -38px; top: 0; width: 16px; height: 16px; background: #42b883; border: 4px solid white; border-radius: 50%; box-shadow: 0 0 0 2px #42b883;"></div>
+    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #42b883;">
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <span style="background: #42b883; color: white; padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: bold;">2016年10月</span>
+        <div style="margin-left: 10px; width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 12px solid #42b883;"></div>
+      </div>
+      <div style="font-size: 16px; color: #35495e; font-weight: bold;">v2.0 发布</div>
+      <div style="font-size: 14px; color: #666; margin-top: 5px;">引入 Virtual DOM，性能大幅提升</div>
+    </div>
+  </div>
+
+  <!-- 2018年8月 -->
+  <div style="position: relative; margin-bottom: 40px;">
+    <div style="position: absolute; left: -38px; top: 0; width: 16px; height: 16px; background: #42b883; border: 4px solid white; border-radius: 50%; box-shadow: 0 0 0 2px #42b883;"></div>
+    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #42b883;">
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <span style="background: #35495e; color: white; padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: bold;">2018年8月</span>
+        <div style="margin-left: 10px; width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 12px solid #35495e;"></div>
+      </div>
+      <div style="font-size: 16px; color: #35495e; font-weight: bold;">成立核心团队</div>
+      <div style="font-size: 14px; color: #666; margin-top: 5px;">全职维护开始</div>
+    </div>
+  </div>
+
+  <!-- 2020年9月 -->
+  <div style="position: relative; margin-bottom: 40px;">
+    <div style="position: absolute; left: -38px; top: 0; width: 16px; height: 16px; background: #42b883; border: 4px solid white; border-radius: 50%; box-shadow: 0 0 0 2px #42b883;"></div>
+    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #42b883;">
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <span style="background: #42b883; color: white; padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: bold;">2020年9月</span>
+        <div style="margin-left: 10px; width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 12px solid #42b883;"></div>
+      </div>
+      <div style="font-size: 16px; color: #35495e; font-weight: bold;">v3.0 发布</div>
+      <div style="font-size: 14px; color: #666; margin-top: 5px;">Composition API 革命</div>
+    </div>
+  </div>
+
+  <!-- 2022年2月 -->
+  <div style="position: relative; margin-bottom: 40px;">
+    <div style="position: absolute; left: -38px; top: 0; width: 16px; height: 16px; background: #42b883; border: 4px solid white; border-radius: 50%; box-shadow: 0 0 0 2px #42b883;"></div>
+    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #42b883;">
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <span style="background: #35495e; color: white; padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: bold;">2022年2月</span>
+        <div style="margin-left: 10px; width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 12px solid #35495e;"></div>
+      </div>
+      <div style="font-size: 16px; color: #35495e; font-weight: bold;">成为主流</div>
+      <div style="font-size: 14px; color: #666; margin-top: 5px;">GitHub 200k+ Stars</div>
+    </div>
+  </div>
+
+</div>
+<h2 id="_3">📊 生态影响力</h2>
+<div style="display: flex; justify-content: center; margin: 40px 0;">
+<table style="border-collapse: collapse; width: 95%; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden;">
+  <thead style="background: linear-gradient(135deg, #42b883, #35495e); color: white;">
+    <tr>
+      <th style="padding: 15px; font-size: 18px; font-weight: bold;">指标</th>
+      <th style="padding: 15px; font-size: 18px; font-weight: bold;">数据</th>
+      <th style="padding: 15px; font-size: 18px; font-weight: bold;">意义</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: #f8f9fa;">
+      <td style="padding: 15px; border-bottom: 1px solid #e9ecef; font-weight: bold; color: #35495e;">GitHub Stars</td>
+      <td style="padding: 15px; border-bottom: 1px solid #e9ecef; font-size: 20px; font-weight: bold; color: #42b883;">200,000+</td>
+      <td style="padding: 15px; border-bottom: 1px solid #e9ecef; color: #666;">开发者认可度</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="padding: 15px; border-bottom: 1px solid #e9ecef; font-weight: bold; color: #35495e;">npm周下载量</td>
+      <td style="padding: 15px; border-bottom: 1px solid #e9ecef; font-size: 20px; font-weight: bold; color: #42b883;">3,000,000+</td>
+      <td style="padding: 15px; border-bottom: 1px solid #e9ecef; color: #666;">实际使用量</td>
+    </tr>
+    <tr style="background-color: #f8f9fa;">
+      <td style="padding: 15px; border-bottom: 1px solid #e9ecef; font-weight: bold; color: #35495e;">核心贡献者</td>
+      <td style="padding: 15px; border-bottom: 1px solid #e9ecef; font-size: 20px; font-weight: bold; color: #42b883;">30+</td>
+      <td style="padding: 15px; border-bottom: 1px solid #e9ecef; color: #666;">团队规模</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="padding: 15px; font-weight: bold; color: #35495e;">相关插件</td>
+      <td style="padding: 15px; font-size: 20px; font-weight: bold; color: #42b883;">10,000+</td>
+      <td style="padding: 15px; color: #666;">生态丰富度</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="_4">🚀 惊人的成长曲线</h2>
+<p><strong>GitHub Stars 增长历程：</strong></p>
+<div style="display: flex; justify-content: center; margin: 40px 0;">
+<svg width="800" height="400" viewBox="0 0 800 400" style="background: #f8f9fa; border-radius: 10px; padding: 20px;">
+  <!-- 网格线 -->
+  <line x1="80" y1="50" x2="80" y2="350" stroke="#ddd" stroke-width="1"/>
+  <line x1="80" y1="350" x2="750" y2="350" stroke="#ddd" stroke-width="1"/>
+
+  <!-- 折线 -->
+  <polyline 
+    points="80,330 200,320 320,250 440,100 560,50" 
+    fill="none" 
+    stroke="#42b883" 
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+
+  <!-- 数据点 -->
+  <circle cx="80" cy="330" r="6" fill="#42b883"/>
+  <circle cx="200" cy="320" r="6" fill="#42b883"/>
+  <circle cx="320" cy="250" r="6" fill="#42b883"/>
+  <circle cx="440" cy="100" r="6" fill="#42b883"/>
+  <circle cx="560" cy="50" r="6" fill="#42b883"/>
+
+  <!-- 数据标签 -->
+  <g font-family="Arial" font-size="14" text-anchor="middle" fill="#35495e">
+    <text x="80" y="370">2014</text>
+    <text x="200" y="370">2016</text>
+    <text x="320" y="370">2018</text>
+    <text x="440" y="370">2020</text>
+    <text x="560" y="370">2023</text>
+
+    <text x="40" y="60" text-anchor="end">200k+</text>
+    <text x="40" y="150" text-anchor="end">150k+</text>
+    <text x="40" y="240" text-anchor="end">100k+</text>
+    <text x="40" y="330" text-anchor="end">50k+</text>
+    <text x="40" y="350" text-anchor="end">0</text>
+  </g>
+
+  <!-- 数值标签 -->
+  <g font-family="Arial" font-size="12" text-anchor="middle" fill="#666">
+    <text x="80" y="310">2,845</text>
+    <text x="200" y="300">41,387</text>
+    <text x="320" y="230">100,000+</text>
+    <text x="440" y="80">180,000+</text>
+    <text x="560" y="30">205,000+</text>
+  </g>
+</svg>
+</div>
+<h2 id="vuejs_1">🌟 为什么 Vue.js 能成功？</h2>
+<div class="tech-card">
+
+   💡 渐进式设计
+- 可以从简单的页面开始
+- 逐步扩展到复杂应用
+- 学习曲线平缓，适合各种技能水平的开发者
+
+</div>
+
+<div class="tech-card">
+
+   🛠️ 开发者体验
+- 清晰的文档和教程
+- 友好的错误提示信息
+- 强大的开发工具支持
+
+</div>
+
+<div class="tech-card">
+
+   🌍 社区驱动
+- 开放的决策过程
+- 活跃的社区贡献
+- 多语言支持和完善的生态
+
+</div>
+
+<h2 id="vuejs_2">📚 开始阅读 Vue.js 的完整故事</h2>
+<p><a class="md-button md-button--primary" href="birth/">🚀 诞生记</a>
+<a class="md-button" href="growth/">🌱 成长历程</a>
+<a class="md-button" href="technology/">⚡ 技术演进</a>
+<a class="md-button" href="ecosystem/">🌍 生态发展</a>
+<a class="md-button" href="statistics/">📊 数据见证</a>
+<a class="md-button" href="team/">👥 团队故事</a>
+<a class="md-button" href="future/">🔮 未来展望</a></p>
+<hr />
+<div style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #42b883, #35495e); color: white; border-radius: 10px;">
+
+准备好开始这段精彩的技术之旅了吗？
+
+<div style="text-align: center; margin-top: 20px;">
+  <a href="/birth/" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #42b883, #35495e); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 12px rgba(65, 184, 131, 0.3);">
+    🎬 开始阅读第一章
+  </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.suggest", "search.highlight"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
